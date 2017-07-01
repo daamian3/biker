@@ -65,6 +65,10 @@ input[type=submit]:hover{
 	background: linear-gradient(#cc6611, #ff5544);
 }
 
+.ui-dialog .ui-dialog-title{
+ text-shadow: 3px 1px black;
+}
+
 #register h2{
 	font-weight: bold;
 	font-size: 32px;
@@ -195,7 +199,7 @@ progress[value]::-webkit-progress-value {
 
 .button:hover{
 	padding-bottom: 7px;
-	border-bottom-color: #cc6611;
+	border-bottom-color: #ec8c1b;
 }
 
 .image img{
