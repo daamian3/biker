@@ -5,16 +5,17 @@
 		<meta charset="UTF-8">
 		<title>Biker</title>
 
+		<script src="jquery/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" href="jquery/jquery-ui.min.css">
+		<script src="jquery/external/jquery/jquery.js"></script>
+		<script src="jquery/jquery-ui.min.js"></script>
+
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://fonts.googleapis.com/css?family=Spectral" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
 		<link rel="stylesheet" href="css/style.css">
 		<?php include 'detect.php'; ?>
 
-		<script src="jquery/jquery-3.2.1.min.js"></script>
-		<link rel="stylesheet" href="jquery/jquery-ui.min.css">
-		<script src="jquery/external/jquery/jquery.js"></script>
-		<script src="jquery/jquery-ui.min.js"></script>
 	</head>
 	<body>
 
@@ -37,9 +38,9 @@
 			if(isset($_SESSION['error'])) echo '<div id="dialog"></div>';
 
 			if(isset($_SESSION['auth']) && $_SESSION['auth'] == true && $_SESSION['ip'] == $_SERVER['REMOTE_ADDR'])
-				echo 'Zalogowano';
+				echo '<script> var zalogowany = true; </script>';
 			else{
-				echo 'Niezalogowano';
+				echo '<script> var zalogowany = false; </script>';
 			}
 		?>
 
@@ -47,7 +48,7 @@
 
 			<div class="logo">
 				<a href="index.php">
-					<img src="logo.svg" alt="logo_motocykl">
+					<img src="images/logo.svg" alt="logo_motocykl">
 					<h1>Biker</h1>
 					</a>
 			</div>
@@ -70,7 +71,7 @@
 					<h2>Motocykle to nasza pasja...</h2>
 					<div class="triangle"><div></div></div>
 				</div>
-				<img src="back.jpeg" alt="motocykl na ciemnym tle">
+				<img src="images/back.jpeg" alt="motocykl na ciemnym tle">
 			</article>
 
 			<article id="here" class="text">
@@ -87,11 +88,11 @@
 						<div id="close" class="close"></div>
 						<form id="register" method="POST" action="register.php">
 							<h2>Rejestracja:</h2>
-							<input type="text" id="login" name="login" autocomplete="off" maxlength="14" placeholder="Wybierz swój login" required=""><br />
-							<input type="text" id="email" name="email" autocomplete="on" maxlength="50" placeholder="Twój email" required=""><br />
-							<input type="password" id="haslo" name="haslo" maxlength="20" placeholder="Wpisz tutaj hasło" required=""><br />
+							<input type="text" id="login" name="login" autocomplete="off" maxlength="14" placeholder="Wybierz swój login" required title="Od 4 do 14 znaków. Bez spacji"><br />
+							<input type="text" id="email" name="email" autocomplete="on" maxlength="50" placeholder="Twój email" required title="W formie nazwa@domena.pl/com"><br />
+							<input type="password" id="haslo" name="haslo" maxlength="20" placeholder="Wpisz tutaj hasło" required title="Od 4 do 14 znaków. Bez spacji."><br />
 							<progress id="passwordComplexity" value="0" title="Siła hasła"></progress><br />
-							<input type="password" id="vhaslo" name="vhaslo" maxlength="20" placeholder="Potwierdź hasło" required=""><br />
+							<input type="password" id="vhaslo" name="vhaslo" maxlength="20" placeholder="Potwierdź hasło" required title="Wpisz hasło ponownie."><br />
 							<input name="display-time" type="hidden" value="8">
 							<input type="submit" value="Kontynuuj"><br />
 						</form>
@@ -101,13 +102,47 @@
 						<div id="close2" class="close"></div>
 						<form id="register" method="POST" action="login.php">
 							<h2>Logowanie:</h2><br />
-							Login: <input type="text" id="nick" name="name" maxlength="14"autocomplete="off" required=""><br />
-							Hasło: <input type="password" id="pass" name="pass" maxlength="20" autocomplete="off" required=""><br />
+							Login: <input type="text" id="nick" name="name" maxlength="14"autocomplete="off" required><br />
+							Hasło: <input type="password" id="pass" name="pass" maxlength="20" autocomplete="off" required><br />
 							<input name="display-time" type="hidden" value="24">
-							<a href="zapomnialem_hasla.php" id="forgot">Zapomniałem hasła</a>
+							<div id="forgot" class="forgot">Zapomniałem hasła</div>
 							<input type="submit" value="Zaloguj">
 						</form>
 					</div>
+
+				<?php
+					if(isset($_SESSION['forgot']) && $_SESSION['forgot'] == true){
+
+						echo '
+							<div id="for">
+							<div id="close3" class="close"></div>
+								<form id="register" method="POST" action="newpass.php">
+									<h2>Przypomnij hasło:</h2><br />
+									<input type="password" id="haslo" name="nowe" maxlength="20" placeholder="Wpisz nowe hasło" required><br />
+									<progress id="passwordComplexity" value="0" title="Siła hasła"></progress><br />
+									<input type="password" id="vhaslo" name="vnowe" maxlength="20" placeholder="Potwierdź nowe hasło" required><br />
+									<input type="submit" value="Kontynuuj"><br />
+								</form>
+							</div>
+							';
+
+					}
+					else{
+
+						echo
+						'
+						<div id="for">
+						<div id="close3" class="close"></div>
+							<form id="register" method="POST" action="newpass.php">
+								<h2>Przypomnij hasło:</h2></br>
+								<input type="text" id="login" name="login_email" autocomplete="off" maxlength="50" placeholder="Wpisz login lub email" required></br>
+								<input name="display-time" type="hidden" value="5">
+								<input type="submit" value="Kontynuuj"></br>
+							</form>
+						</div>
+						';
+				}
+			?>
 
 				</div>
 				<div id="up" class="bottom">
@@ -117,14 +152,13 @@
 
 		</div>
 
-		<footer class="footer">
+		<footer id="footer" class="footer">
 			<p>&copy; 2017 | Biker - Miłośnicy motocykli</p>
 		</footer>
 
 		<script src="pass.js"></script>
 		<script>
 
-		var zalogowany = false;
 		var down = false;
 
 		$(document).ready(function(){
@@ -140,8 +174,36 @@
 		$( "#dialog" ).dialog({
 			autoOpen: true,
 			title: "Uwaga",
-			draggable: false
-		}).css("font-size", "18px");
+			draggable: false,
+			modal: true
+		}).css('font-size', '18px');
+
+		$( "#dialog" ).effect( "pulsate", "slow" );
+
+		$( "[title]" ).tooltip({
+				position: {
+					my: "left top",
+					at: "right+5 top-5",
+					collision: "none"
+				}
+		});
+		<?php
+		if(isset($_SESSION['forgot']) && $_SESSION['forgot'] == true){
+
+		unset($_SESSION['forgot']);
+		echo '
+
+
+		$("#for").slideDown( "slow" );
+		$("#here2").css("min-height", "600px");
+		setTimeout(function(){
+			$("html, body").animate({
+				scrollTop: $("#here2").offset().top
+			}, 1000);
+		}, 100);
+		';
+		}
+		?>
 
 		$("#down").click(function() {
     	$('html, body').animate({
@@ -184,8 +246,20 @@
 			return false;
 		});
 
+		$("#forgot").click(function() {
+			$('html, body').animate({
+      	scrollTop: here2.offset().top
+    	}, 500);
+
+			setTimeout(function(){
+				$("#for").slideDown( "slow" );
+			}, 500);
+			here2.css('min-height', '600px');
+			return false;
+		});
+
 		$("#log").click(function() {
-			if(zalogowany==true) window.location.href = "logowanie.php";
+			if(zalogowany==true) window.location.href = "start.php";
 			$('html, body').animate({
       	scrollTop: here2.offset().top
     	}, 1000);
@@ -212,13 +286,19 @@
 		});
 
 		$("#close").click(function() {
-			$("#rejestracja").slideUp( "slow" );
+			$("#rejestracja").hide( "clip" );
 			$('#here2').css('min-height', '250px');
 			return false;
 		});
 
 		$("#close2").click(function() {
-			$("#logowanie").slideUp( "slow" );
+			$("#logowanie").hide( "clip" );
+			$('#here2').css('min-height', '250px');
+			return false;
+		});
+
+		$("#close3").click(function() {
+			$("#for").hide( "clip" );
 			$('#here2').css('min-height', '250px');
 			return false;
 		});

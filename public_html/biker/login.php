@@ -91,7 +91,7 @@
 		$_SESSION['auth'] = true;
 		$_SESSION['login'] = $login;
 		$_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
-		header("Location: index.php");
+		header("Location: start.php");
 		exit();
 
 	}
