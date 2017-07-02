@@ -22,7 +22,6 @@
 		<!-- ładowanie się strony -->
 		<div id="przyciemnienie" class="przyciemnienie"></div>
 		<div id="loading" class="loading">
-			Trwa ładowanie strony...
 			<div class="loader"></div>
 		</div>
 
@@ -161,7 +160,7 @@
 
 		var down = false;
 
-		$(document).ready(function(){
+		$( window ).on( "load", function() {
 	 		// Po poprawnym załadowaniu strony wyłącza przyciemnienie
 		 	$("#przyciemnienie").fadeOut('fast');
 		 	// Po poprawnym załadowaniu strony wyłącza loading
@@ -175,7 +174,11 @@
 			autoOpen: true,
 			title: "Uwaga",
 			draggable: false,
-			modal: true
+			modal: true,
+			hide: {
+        effect: "fold",
+        duration: 1000
+      }
 		}).css('font-size', '18px');
 
 		$( "#dialog" ).effect( "pulsate", "slow" );
@@ -187,6 +190,18 @@
 					collision: "none"
 				}
 		});
+
+		var here2 = $("#here2");
+		var rejestracja = $("#rejestracja");
+		var logowanie = $("#logowanie");
+		var przypomnij = $("#for");
+
+		function schowaj(){
+			rejestracja.hide("clip");
+			logowanie.hide("clip");
+			przypomnij.hide("clip");
+		}
+
 		<?php
 		if(isset($_SESSION['forgot']) && $_SESSION['forgot'] == true){
 
@@ -194,11 +209,11 @@
 		echo '
 
 
-		$("#for").slideDown( "slow" );
-		$("#here2").css("min-height", "600px");
+		przypomnij.slideDown( "slow" );
+		here2.css("min-height", "600px");
 		setTimeout(function(){
 			$("html, body").animate({
-				scrollTop: $("#here2").offset().top
+				scrollTop: here2.offset().top
 			}, 1000);
 		}, 100);
 		';
@@ -219,14 +234,11 @@
 			return false;
 		});
 
-		var here2 = $("#here2");
-		var rejestracja = $("#rejestracja");
-
 		$("#reg").click(function() {
 			$('html, body').animate({
       	scrollTop: here2.offset().top
     	}, 1000);
-
+			schowaj();
 			setTimeout(function(){
 				rejestracja.slideDown( "slow" );
 			}, 1000);
@@ -238,7 +250,7 @@
 			$('html, body').animate({
       	scrollTop: here2.offset().top
     	}, 500);
-
+			schowaj();
 			setTimeout(function(){
 				rejestracja.slideDown( "slow" );
 			}, 500);
@@ -250,9 +262,9 @@
 			$('html, body').animate({
       	scrollTop: here2.offset().top
     	}, 500);
-
+			schowaj();
 			setTimeout(function(){
-				$("#for").slideDown( "slow" );
+				przypomnij.slideDown( "slow" );
 			}, 500);
 			here2.css('min-height', '600px');
 			return false;
@@ -263,9 +275,9 @@
 			$('html, body').animate({
       	scrollTop: here2.offset().top
     	}, 1000);
-
+			schowaj();
 			setTimeout(function(){
-				$("#logowanie").slideDown( "slow" );
+				logowanie.slideDown( "slow" );
 			}, 1000);
 			here2.css('min-height', '600px');
 			return false;
@@ -286,19 +298,19 @@
 		});
 
 		$("#close").click(function() {
-			$("#rejestracja").hide( "clip" );
-			$('#here2').css('min-height', '250px');
+			rejestracja.hide( "clip" );
+			here2.css('min-height', '250px');
 			return false;
 		});
 
 		$("#close2").click(function() {
-			$("#logowanie").hide( "clip" );
-			$('#here2').css('min-height', '250px');
+			logowanie.hide( "clip" );
+			here2.css('min-height', '250px');
 			return false;
 		});
 
 		$("#close3").click(function() {
-			$("#for").hide( "clip" );
+			przypomnij.hide( "clip" );
 			$('#here2').css('min-height', '250px');
 			return false;
 		});
