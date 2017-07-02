@@ -1,0 +1,395 @@
+input{
+	padding:8px;
+	margin:10px;
+	font-size: 16px;
+	background-color: #222222;
+	border-color:#444444;
+	color:white;
+}
+
+input:focus{
+	outline-color:#666666;
+}
+
+input[type=submit]{
+	border-radius:10px;
+	background: linear-gradient(#cc6611, #ff3322);
+	cursor: pointer;
+	transition: 0.5s;
+	margin-left: 140px;
+}
+
+input[type=submit]:last-child{
+	margin-left: 35px;
+}
+
+input[type=submit]:hover{
+	background: linear-gradient(#cc6611, #ff5544);
+}
+
+#register h2{
+	font-weight: bold;
+	font-size: 32px;
+}
+
+#register{
+	padding: 15px;
+}
+
+.good:focus {
+  outline-color: #00aa00;
+	background-color: #002200;
+}
+
+.bad:focus {
+  outline-color: #aa0000;
+	background-color: #200000;
+}
+
+#passwordComplexity{
+	display: inline-block;
+	width: 211px;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+progress[value]::-webkit-progress-value {
+	background-image:
+	   -webkit-linear-gradient(-45deg,
+	                           transparent 33%, rgba(0, 0, 0, .1) 33%,
+	                           rgba(0,0, 0, .1) 66%, transparent 66%),
+	   -webkit-linear-gradient(top,
+	                           rgba(255, 255, 255, .25),
+	                           rgba(0, 0, 0, .5)),
+	  -webkit-linear-gradient(left, #f44, #2db300 80%);
+
+	background-size: 35px 20px, 100% 100%, 100% 100%;
+	transition : width 0.5s ease;
+}
+
+.forgot{
+	transition: 0.5s;
+	text-shadow: black 3px 3px 10px;
+	padding: 5px;
+	display: inline-block;
+	margin-left: -50px;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.forgot:hover{
+	transform: translate(10px, 0px);
+	color: white;
+}
+
+.image img{
+	width: 100%;
+	box-shadow: 0px 10px 10px 0px black;
+}
+
+.top{
+	text-align: center;
+	font-style: italic;
+	height: 110px;
+	padding-top: 40px;
+	background: linear-gradient(#111111, #0b0f12);
+	cursor:pointer;
+}
+
+.bottom{
+	height: 50px;
+	padding-top: 20px;
+	cursor:pointer;
+}
+
+.triangle {
+	position: relative;
+	width: 20px;
+	margin: 0 auto;
+	animation: arrow 2s ease infinite;
+	cursor:pointer;
+	margin-top: 15px;
+}
+
+@keyframes arrow {
+	0% { transform:translate(0, 0px); }
+	50% { transform:translate(0, 5px);}
+	100% { transform:translate(0, 0px);}
+}
+
+.top:hover > .triangle{
+	animation: initial;
+	transform:scale(1.2, 1.2);
+}
+
+.triangle > div {
+	width: 20px;
+	height: 0px;
+	background: white;
+	transform: rotate(180deg);
+}
+
+.triangle>div:before {
+	content: " ";
+	display: block;
+	width: 20px;
+	height: 2px;
+	 background: white;
+	-webkit-transform: rotate(56deg);
+	-moz-transform: rotate(56deg);
+	-ms-transform: rotate(56deg);
+	transform: rotate(56deg);
+	position: absolute;
+	top: -8px;
+	right: -5px;
+}
+
+.triangle>div:after {
+	content: " ";
+	display: block;
+	width: 20px;
+	height: 2px;
+ 	background: white;
+	-webkit-transform: rotate(-56deg);
+	-moz-transform: rotate(-56deg);
+	-ms-transform: rotate(-56deg);
+	transform: rotate(-56deg);
+	position: absolute;
+	top: -8px;
+	left: -5px;
+}
+
+.triangle_up {
+	position: relative;
+	width: 20px;
+	margin: 0 auto;
+	animation: arrow 2s ease infinite;
+	cursor:pointer;
+	margin-top: 15px;
+}
+
+@keyframes arrow {
+	0% { transform:translate(0, 0px); }
+	50% { transform:translate(0, 5px);}
+	100% { transform:translate(0, 0px);}
+}
+
+.bottom:hover > .triangle_up{
+	animation: initial;
+	transform:scale(1.2, 1.2);
+}
+
+.triangle_up > div {
+	width: 20px;
+	height: 0px;
+	background: white;
+}
+
+.triangle_up>div:before {
+	content: " ";
+	display: block;
+	width: 20px;
+	height: 2px;
+	 background: white;
+	-webkit-transform: rotate(56deg);
+	-moz-transform: rotate(56deg);
+	-ms-transform: rotate(56deg);
+	transform: rotate(56deg);
+	position: absolute;
+	top: -8px;
+	right: -5px;
+}
+
+.triangle_up>div:after {
+	content: " ";
+	display: block;
+	width: 20px;
+	height: 2px;
+ 	background: white;
+	-webkit-transform: rotate(-56deg);
+	-moz-transform: rotate(-56deg);
+	-ms-transform: rotate(-56deg);
+	transform: rotate(-56deg);
+	position: absolute;
+	top: -8px;
+	left: -5px;
+}
+
+.text{
+	width: 90%;
+	text-align: justify;
+	margin: 0 auto;
+	padding: 15px;
+}
+
+.zapoznanie{
+	width: 50%;
+	padding-right: 50px;
+	float: left;
+}
+
+.register{
+	float: left;
+	width: 50%;
+	text-align: center;
+	font-family: Righteous;
+	background-color: #cc6611;
+	color: white;
+	font-size: 30px;
+	padding: 25px;
+	border: solid 2px #b05615;
+	border-bottom-width: 10px;
+	border-right-width: 10px;
+	border-radius: 30px;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 1800px){
+  .register{
+	  margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 1700px){
+  .register{
+	  margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 1600px){
+  .register{
+	  margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 1500px){
+  .register{
+	  margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 1400px){
+  .register{
+	  margin-top: 22px;
+  }
+}
+
+@media screen and (max-width: 1300px){
+  .register{
+	  margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  .register{
+	  margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 1100px){
+  .register{
+	  margin-top: 45px;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  .register{
+	  margin-top: 50px;
+  }
+	.zapoznanie{
+		padding-right: 25px;
+	}
+}
+
+@media screen and (max-width: 900px){
+  .register{
+	  margin-top: 57px;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .register{
+	  margin-top: 90px;
+  }
+}
+
+.register:hover{
+	padding-right: 10px;
+}
+
+.tor{
+	background-image: url('../images/race.jpeg');
+	background-size: cover;
+	background-position: center;
+	height: 1300px;
+	transition: 1s;
+	text-align: center;
+}
+
+@media screen and (max-width: 1800px){
+  .tor{
+	  height: 1150px;
+  }
+}
+
+@media screen and (max-width: 1600px){
+  .tor{
+	  height: 1000px;
+  }
+}
+
+@media screen and (max-width: 1400px){
+  .tor{
+	  height: 875px;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  .tor{
+	  height: 800px;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  .tor{
+	  height: 650px;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .tor{
+	  height: 550px;
+  }
+}
+
+#rejestracja{
+	text-align: center;
+	padding: 20px;
+  margin: 0 auto;
+	background: rgba(0, 0, 0, 0.75);
+	display: none;
+	position: relative;
+	top: 15%;
+}
+
+#logowanie{
+	text-align: center;
+	padding: 20px;
+  margin: 0 auto;
+	background: rgba(0, 0, 0, 0.75);
+	display: none;
+	position: relative;
+	top: 15%;
+}
+
+#for{
+	text-align: center;
+	padding: 20px;
+  margin: 0 auto;
+	background: rgba(0, 0, 0, 0.75);
+	display: none;
+	position: relative;
+	top: 15%;
+}

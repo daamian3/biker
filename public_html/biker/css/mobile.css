@@ -2,83 +2,16 @@ body{
 	min-width: inherit;
 }
 
-.hamburger {
-	float: right;
+.logo2{
+	display: none;
+}
+
+.hamburger{
 	display: inline-block;
-	margin: 18px;
-	width: 40px;
-	height: 35px;
-	border: 0;
-	border-top: 5px solid #eeeeee;
-	border-radius: 5px;
-	position: relative;
-	transition: 0.3s transform linear;
-	background-color: rgba(255, 255, 255, 0);
 }
 
-.hamburger::before{
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	border-top: 5px solid #eeeeee;
-	border-radius: 5px;
-	transform: translateY(10px);
-}
-
-.hamburger::after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	border-top: 5px solid #eeeeee;
-	transform: translateY(10px);
-	border-radius: 0px 0px 5px 5px;
-	transform: translateY(25px);
-	transition: 0.3s transform linear;
-}
-
-.exit {
-	float: right;
+.exit{
 	display: inline-block;
-	margin: 18px;
-	width: 40px;
-	height: 35px;
-	border: 0;
-	border-top: 5px solid #eeeeee;
-	border-radius: 5px;
-	position: relative;
-	transition: 0.3s transform linear;
-	background-color: rgba(255, 255, 255, 0);
-	border: none;
-	transform: rotate(45deg) translateY(5px);
-}
-
-.exit::before{
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	border-top: 5px solid #eeeeee;
-	border-radius: 10px;
-	transform: translateY(10px);
-}
-
-.exit::after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	border-top: 5px solid #eeeeee;
-	transform: translateY(10px);
-	border-radius: 10px;
-	transform: translateY(25px);
-	transition: 0.3s transform linear;
-	transform: rotate(-90deg) translateX(-10px);
 }
 
 .zapoznanie{
@@ -93,10 +26,13 @@ body{
 	margin-top: 20px;
 }
 
+#menu{
+	display: none;
+}
+
 .buttons{
 	padding: 10px;
 	vertical-align: inherit;
-	display: none;
 	margin-left: inherit;
 	text-align: right;
 }

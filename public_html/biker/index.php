@@ -14,6 +14,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Spectral" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/index.css">
 		<?php include 'detect.php'; ?>
 
 	</head>
