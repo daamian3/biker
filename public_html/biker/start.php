@@ -85,7 +85,7 @@
 			<div style="clear: both;"></div>
 		</header>
 
-		<div id="menu" style="clear: both;">
+		<div id="menu">
   			<ul>
 					<li class="moto"><img src="images/honda_logo.svg"></li>
 					<li class="moto"><img src="images/yamaha_logo.svg"></li>
@@ -99,9 +99,14 @@
 		</div>
 
 		<div class="container">
-
+			<ul id="sortable">
+				<li><div id="newest"></div></li>
+				<li><div id="moto"></div></li>
+				<li><div id="moto2"></div></li>
+				<li><div id="user"></div></li>
+			</ul>
 		</div>
-
+		<div style="clear: both;"></div>
 		<footer id="footer" class="footer">
 			<p>&copy; 2017 | Biker - Miłośnicy motocykli</p>
 		</footer>
@@ -174,6 +179,11 @@
 			}
 			return false;
 		});
+
+		$(function() {
+    	$("#sortable").sortable();
+    	$("#sortable").disableSelection();
+  	});
 
 		$(document).ready(function() {
 			var NavY = $('#nav').offset().top;

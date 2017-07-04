@@ -1,5 +1,12 @@
 body{
 	min-width: 450px;
+	background:
+	rgba(0, 0, 0, 0.9)
+	url(../images/back2.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	min-width: 520px;
 }
 
 input{
@@ -88,6 +95,11 @@ ul, li{
 	padding: 0;
 }
 
+#menu{
+	float: left;
+	clear: both;
+}
+
 #menu img{
 	width: 100%;
 }
@@ -105,8 +117,8 @@ ul, li{
 }
 
 #menu li:hover{
-	margin-left: -2px;
 	background-color: white;
+	transform: translate(10px, 0);
 }
 
 #menu li:first-child{
@@ -117,6 +129,7 @@ ul, li{
 	border-radius: 0 0 5px 0;
 }
 
+
 #options{
 	display: none;
 	position: absolute;
@@ -126,6 +139,8 @@ ul, li{
 	padding: 10px;
 	padding-right: 22px;
 	padding-left: 22px;
+	border-radius: 0 0 5px 5px;
+	border: hidden 5px black;
 }
 
 #options li{
@@ -179,6 +194,53 @@ ul, li{
 	margin-right:-5px;
 	border-radius: 0px 4px 4px 0px;
 	cursor: pointer;
+}
+
+.container ul{
+	display: inline-block;
+	float: left;
+	text-align: center;
+	margin-left: 130px;
+	background-color: white;
+	width: 1550px;
+}
+
+.container li{
+	display: block;
+	float: left;
+	width: 500px;
+	height: 270px;
+	margin: 20px;
+	background-image: url(../images/ninja.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+@media screen and (max-width: 1820px){
+
+	.container ul{
+		width: 1300px;
+	}
+
+}
+
+@media screen and (max-width: 1600px){
+
+	.container ul{
+		margin-left: 50px;
+		width: 1000px;
+	}
+
+}
+
+@media screen and (max-width: 1200px){
+
+	.container ul{
+		margin-left: 20px;
+		width: 700px;
+	}
+
 }
 
 @media screen and (min-width: 1800px){
