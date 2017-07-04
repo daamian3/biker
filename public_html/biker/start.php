@@ -13,6 +13,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://fonts.googleapis.com/css?family=Spectral" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+		<link href="css/css/move.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/start.css">
 		<?php include 'detect.php'; ?>
@@ -100,10 +101,25 @@
 
 		<div class="container">
 			<ul id="sortable">
-				<li><div id="newest"></div></li>
-				<li><div id="moto"></div></li>
-				<li><div id="moto2"></div></li>
-				<li><div id="user"></div></li>
+				<li><div id="newest">
+					<img src="images/ninja.jpg">
+					<div class="handle">&#xf047;</div>
+				</div></li>
+
+				<li><div id="moto">
+					<img src="images/ninja.jpg">
+					<div class="handle">&#xf047;</div>
+				</div></li>
+
+				<li><div id="moto2">
+					<img src="images/ninja.jpg">
+					<div class="handle">&#xf047;</div>
+				</div></li>
+
+				<li><div id="user">
+					<img src="images/ninja.jpg">
+					<div class="handle">&#xf047;</div>
+				</div></li>
 			</ul>
 		</div>
 		<div style="clear: both;"></div>
@@ -180,10 +196,23 @@
 			return false;
 		});
 
-		$(function() {
-    	$("#sortable").sortable();
-    	$("#sortable").disableSelection();
-  	});
+		if(mobile == false){
+			$(function() {
+
+				var sortableList = $('#sortable');
+				sortableList.sortable({
+					revert: "200",
+					scroll: false,
+					cursor: 'move',
+					handle: ".handle",
+					placeholder: 	'sortable-placeholder',
+					start: function(event, ui) {
+						ui.placeholder.html(ui.item.html(	));
+					}
+				});
+				sortableList.disableSelection();
+			});
+		}
 
 		$(document).ready(function() {
 			var NavY = $('#nav').offset().top;

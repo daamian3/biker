@@ -1,8 +1,6 @@
 body{
 	min-width: 450px;
-	background:
-	rgba(0, 0, 0, 0.9)
-	url(../images/back2.jpg);
+	background-image: url(../images/back2.jpg);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -58,14 +56,6 @@ input[type=submit]:hover{
 	float: left;
 }
 
-.fixed{
-	position: fixed;
-	width: 100%;
-	left: 0;
-	top: 0;
-	z-index: 100;
-}
-
 .logo2{
 	display: inline-block;
 	float: left;
@@ -96,7 +86,7 @@ ul, li{
 }
 
 #menu{
-	float: left;
+	position: absolute;
 	clear: both;
 }
 
@@ -128,7 +118,6 @@ ul, li{
 #menu li:last-child{
 	border-radius: 0 0 5px 0;
 }
-
 
 #options{
 	display: none;
@@ -196,59 +185,111 @@ ul, li{
 	cursor: pointer;
 }
 
+.container{
+	padding: 10px;
+	width: 85%;
+	margin: 0 auto;
+}
+
 .container ul{
-	display: inline-block;
-	float: left;
 	text-align: center;
-	margin-left: 130px;
-	background-color: white;
-	width: 1550px;
+	margin: 100px;
+	margin-bottom: 40px;
+	margin-top: 10px;
 }
 
 .container li{
-	display: block;
-	float: left;
-	width: 500px;
-	height: 270px;
+	display: inline-block;
+	width: 40%;
 	margin: 20px;
-	background-image: url(../images/ninja.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
+	margin-top: 30px;
+	background-color: yellow;
+	position: relative;
 }
 
-@media screen and (max-width: 1820px){
+.container img{
+	max-width: 100%;
+	padding: 10px;
+}
+
+.sortable-placeholder {
+	opacity: 0.1;
+}
+
+.handle {
+  position: absolute;
+	right: 15px;
+	top: 15px;
+	font-size: 20px;
+  opacity: 0.5;
+	cursor: move;
+  cursor: grab;
+	font-family: 'move';
+	color: white;
+	background-color: black;
+	padding: 5px;
+	border-radius: 50%;
+	transition: 0.3s;
+}
+
+.handle:hover{
+	background-color: #222222;
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1300px){
+
+	#menu li{
+		width: 80px;
+		padding: 5px;
+		padding-left: 20px;
+		padding-top: 10px;
+	}
 
 	.container ul{
-		width: 1300px;
+		margin: 10px;
+		margin-top: 10px;
 	}
 
 }
 
-@media screen and (max-width: 1600px){
+@media screen and (min-width: 1300px) and (max-width: 1500px){
+
+	#menu li{
+		width: 90px;
+		padding: 5px;
+		padding-left: 20px;
+		padding-top: 10px;
+	}
 
 	.container ul{
-		margin-left: 50px;
-		width: 1000px;
+		margin: 40px;
+		margin-top: 10px;
 	}
 
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (min-width: 1500px) and (max-width: 1700px){
+
+	#menu li{
+		width: 100px;
+	}
 
 	.container ul{
-		margin-left: 20px;
-		width: 700px;
+		margin: 60px;
+		margin-top: 15px;
 	}
 
 }
 
-@media screen and (min-width: 1800px){
+@media screen and (min-width: 1700px) and (max-width: 1900px){
 
-	.footer{
-		position: absolute;
-		bottom: 0;
-		width: 100%;
+	#menu li{
+		width: 110px;
+	}
+
+	.container ul{
+		margin: 80px;
+		margin-top: 20px;
 	}
 
 }
