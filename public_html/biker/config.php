@@ -7,10 +7,10 @@ date_default_timezone_set('Europe/Warsaw');
 
 while(!feof($plik))
 {
-	
+
    $linia = fgets($plik);
    $config[] = $linia;
-   
+
 }
 
 $host = trim($config[0]);
@@ -26,16 +26,16 @@ try{
 			PDO::ATTR_EMULATE_PREPARES => false,
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 		));
-	
+
 }
 
 catch(PDOException $err){
-	
+
 		$err -> getMessage();
 		$_SESSION['error'] = "Przepraszamy, wystąpił błąd!";
 		header("Location: index.php");
 		exit();
-		
+
 }
-	
+
 ?>
