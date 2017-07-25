@@ -159,26 +159,15 @@
 		<script src="scripts/pass.js"></script>
 		<script src="scripts/loader.js"></script>
 
-		<script>
-
-		var down = false;
-
-		$( "#dialog" ).html("<?php
+		<?php
 		if(isset($_SESSION['error'])){
-			echo $_SESSION['error'];
+			echo '<script>$("#dialog").html("'.$_SESSION['error'].'")</script>';
 			unset($_SESSION['error']);
 		}
-		?>");
-		</script>
+		?>
 
 		<script src="scripts/index_1.js"></script>
 		<script>
-
-		function schowaj(){
-			rejestracja.hide("clip");
-			logowanie.hide("clip");
-			przypomnij.hide("clip");
-		}
 
 		<?php
 		if(isset($_SESSION['forgot']) && $_SESSION['forgot'] == true){

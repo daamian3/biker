@@ -13,7 +13,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://fonts.googleapis.com/css?family=Spectral" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
-		<link href="css/css/move.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/start.css">
 		<?php include 'detect.php'; ?>
@@ -90,13 +89,13 @@
 
 		<div id="menu">
   			<ul>
-					<a href="honda.php"><li class="moto"><img src="images/honda_logo.svg"></li></a>
-					<a href="yamaha.php"><li class="moto"><img src="images/yamaha_logo.svg"></li></a>
-					<a href="suzuki.php"><li class="moto"><img src="images/suzuki_logo.svg"></li></a>
-					<a href="aprilia.php"><li class="moto"><img src="images/aprilia_logo.svg"></li></a>
-					<a href="bmw.php"><li class="moto"><img src="images/bmw_logo.svg"></li></a>
-					<a href="ducati.php"><li class="moto"><img src="images/ducati_logo.svg"></li></a>
-					<a href="ktm.php"><li class="moto"><img src="images/ktm_logo.svg"></li></a>
-					<a href="triumph.php"><li class="moto"><img src="images/triumph_logo.svg"></li></a>
+					<a href="start.php?marka=honda"><li class="moto"><img src="images/honda_logo.svg"></li></a>
+					<a href="start.php?marka=yamaha"><li class="moto"><img src="images/yamaha_logo.svg"></li></a>
+					<a href="start.php?marka=suzuki"><li class="moto"><img src="images/suzuki_logo.svg"></li></a>
+					<a href="start.php?marka=aprilia"><li class="moto"><img src="images/aprilia_logo.svg"></li></a>
+					<a href="start.php?marka=bmw"><li class="moto"><img src="images/bmw_logo.svg"></li></a>
+					<a href="start.php?marka=ducati"><li class="moto"><img src="images/ducati_logo.svg"></li></a>
+					<a href="start.php?marka=ktm"><li class="moto"><img src="images/ktm_logo.svg"></li></a>
+					<a href="start.php?marka=trumph"><li class="moto"><img src="images/triumph_logo.svg"></li></a>
   		</ul>
 		</div>

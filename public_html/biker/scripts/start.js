@@ -53,30 +53,6 @@ open.click(function() {
 	return false;
 });
 
-if(mobile == false){
-	$(function() {
-		var sortableList = $('#sortable');
-		sortableList.sortable({
-			revert: "200",
-			scroll: false,
-			cursor: 'move',
-			handle: ".handle",
-			placeholder: 	'sortable-placeholder',
-			start: function(event, ui) {
-				ui.placeholder.html(ui.item.html(	));
-			}
-		});
-		sortableList.disableSelection();
-	});
-}
-else{
-	var handle = document.getElementsByClassName("handle");
-	handle[0].style.display = "none";
-	handle[1].style.display = "none";
-	handle[2].style.display = "none";
-	handle[3].style.display = "none";
-}
-
 var moto = $(".moto");
 var menu = $("#menu");
 var scroll = $("#scroll");

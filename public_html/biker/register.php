@@ -2,7 +2,7 @@
 	session_start();
 
 	require "config.php";
-	require "functions.php";
+	require "db_functions.php";
 
 	if (isset($_POST['display-time']) ) {
 

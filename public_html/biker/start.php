@@ -2,19 +2,20 @@
 
 		<div class="container">
 			<ul id="sortable">
-				<?php
-					require "config.php";
-					require "functions.php";
 
-					wyswietl_glowna();
+				<?php
+
+					require "config.php";
+					require "db_functions.php";
+					require "moto_functions.php";
+
+					$marka = $_GET['marka'];
+
+					wyswietl_motocykle($marka);
 				?>
 
-				<li><div id="user" class="block">
-					<img src="images/user.svg">
-					<div class="handle">&#xf047;</div>
-					<div class="suwak">Profil użytkownika</div>
-				</div></li>
 			</ul>
+			<a href="start.php"><div id="black" class="back"><div></div></div></a>
 		</div>
 
 <?php include "start_footer.php"; ?>

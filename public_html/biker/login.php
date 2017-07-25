@@ -2,7 +2,7 @@
 	session_start();
 
 	require "config.php";
-	require "functions.php";
+	require "db_functions.php";
 
 	$wrong_pass = "Nieprawidłowa nazwa użytkownika lub login!";
 	$acces_denied = "Odmowa dostępu!";
