@@ -4,18 +4,14 @@
 			<ul id="sortable">
 
 				<?php
-
-					require "config.php";
-					require "db_functions.php";
 					require "moto_functions.php";
 
 					$marka = $_GET['marka'];
-
 					wyswietl_motocykle($marka);
 				?>
 
 			</ul>
-			<a href="start.php"><div id="black" class="back"><div></div></div></a>
+			<a href="start"><div id="black" class="back"><div></div></div></a>
 		</div>
 
 <?php include "start_footer.php"; ?>

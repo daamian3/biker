@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 	<head>
 
@@ -47,7 +47,7 @@
 		<header class="header">
 
 			<div class="logo">
-				<a href="index.php">
+				<a href="biker/..">
 					<img src="images/logo.svg" alt="logo_motocykl">
 					<h1>Biker</h1>
 					</a>
@@ -56,10 +56,10 @@
 			<div id="scroll" class="hamburger"></div>
 
 			<div id="menu" class="buttons">
-				<div class="button"><a href="start.php">Start</a></div>
+				<div class="button"><a href="start">Start</a></div>
 				<div id="reg" class="button"><a href="#">Zarejestruj się</a></div>
 				<div id="log" class="button"><a href="#">Zaloguj się</a></div>
-				<div class="button"><a href="o_nas.php">O nas</a></div>
+				<div class="button"><a href="o_nas">O nas</a></div>
 			</div>
 
 		</header>

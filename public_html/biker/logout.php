@@ -1,6 +1,9 @@
 <?
 	session_start();
 	session_destroy();
-	header("Location: index.php");
+
+	require "db_functions.php";
+
+	header($index);
 	exit();
 ?>

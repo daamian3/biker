@@ -1,7 +1,6 @@
 ﻿<?php
 	session_start();
 
-	require "config.php";
 	require "db_functions.php";
 
 	if (isset($_POST['display-time']) ) {
@@ -10,7 +9,7 @@
 
 			zakoncz_polaczenie();
 			$_SESSION['error'] = "Przepraszamy, w twoim działaniu wykryto SPAM!";
-			header("Location: index.php");
+			header($index);
 			exit();
 
 		}
@@ -60,7 +59,7 @@
 
 		zakoncz_polaczenie();
 		$_SESSION['error'] = $komunikaty;
-		header("Location: index.php");
+		header($index);
 		exit();
 
 	}
@@ -84,7 +83,7 @@
 
 		zakoncz_polaczenie();
 		$_SESSION['error'] = "Gratulacje! Zostałeś zarejestrowany jako ".$login."!\\nAby zalogować się, aktywuj konto poprzez link wysłany na twój adres email.";
-		header("Location: index.php");
+		header($index);
 		exit();
 
 	}

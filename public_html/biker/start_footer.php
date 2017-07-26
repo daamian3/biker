@@ -1,4 +1,5 @@
 <div style="clear: both;"></div>
+</div>
 <footer id="footer" class="footer">
 	<p>&copy; 2017 | Biker - Miłośnicy motocykli</p>
 </footer>

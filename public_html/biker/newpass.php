@@ -1,7 +1,6 @@
 <?php
 	session_start();
 
-	require "config.php";
 	require "db_functions.php";
 
 	if (isset($_POST['display-time']) ) {
@@ -10,7 +9,7 @@
 
 			zakoncz_polaczenie();
 			$_SESSION['error'] = "Przepraszamy, w twoim działaniu wykryto SPAM!";
-			header("Location: index.php");
+			header($index);
 			exit();
 
 		}
@@ -28,7 +27,7 @@
 			$_SESSION['forgot'] = true;
 			$_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
 			$_SESSION['login'] = $login;
-			header("Location: index.php");
+			header($index);
 			exit();
 
 		}
@@ -36,7 +35,7 @@
 
 			zakoncz_polaczenie();
 			$_SESSION['error'] = "Nieprawidłowy token!";
-			header("Location: index.php");
+			header($index);
 			exit();
 
 		}
@@ -63,7 +62,7 @@
 
 			zakoncz_polaczenie();
 			$_SESSION['error'] = $komunikaty;
-			header("Location: index.php");
+			header($index);
 			exit();
 
 		}
@@ -80,13 +79,13 @@
 			$err -> getMessage();
 			zakoncz_polaczenie();
 			$_SESSION['error'] = "Przepraszamy, wystąpił błąd!";
-			header("Location: index.php");
+			header($index);
 			exit();
 
 		}
 		zakoncz_polaczenie();
 		$_SESSION['error'] = "Udało się! Hasło zostało zmienione.";
-		header("Location: index.php");
+		header($index);
 		exit();
 
 	}
@@ -104,7 +103,7 @@
 
 			zakoncz_polaczenie();
 			$_SESSION['error'] = "Podany login lub email nie istnieje!";
-			header("Location: index.php");
+			header($index);
 			exit();
 
 		}
@@ -122,7 +121,7 @@
 
 			zakoncz_polaczenie();
 			$_SESSION['error'] = "Link do zmiany hasła został wysłany na twój email.";
-			header("Location: index.php");
+			header($index);
 			exit();
 
 		}

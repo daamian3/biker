@@ -3,7 +3,7 @@
 	<head>
 
 		<meta charset="UTF-8">
-		<title>Biker</title>
+		<title>Katalog motocykli</title>
 
 		<script src="jquery/jquery-3.2.1.min.js"></script>
 		<link rel="stylesheet" href="jquery/jquery-ui.min.css">
@@ -54,7 +54,7 @@
 			<div id="scroll" class="hamburger"></div>
 
 			<div class="logo2">
-				<a href="index.php">
+				<a href="biker/..">
 					<img src="images/logo.svg" alt="logo_motocykl">
 					<h1>Biker</h1>
 					</a>
@@ -86,16 +86,17 @@
 			</div>
 			<div style="clear: both;"></div>
 		</header>
-
+		<div class="content">
 		<div id="menu">
   			<ul>
-					<a href="start.php?marka=honda"><li class="moto"><img src="images/honda_logo.svg"></li></a>
-					<a href="start.php?marka=yamaha"><li class="moto"><img src="images/yamaha_logo.svg"></li></a>
-					<a href="start.php?marka=suzuki"><li class="moto"><img src="images/suzuki_logo.svg"></li></a>
-					<a href="start.php?marka=aprilia"><li class="moto"><img src="images/aprilia_logo.svg"></li></a>
-					<a href="start.php?marka=bmw"><li class="moto"><img src="images/bmw_logo.svg"></li></a>
-					<a href="start.php?marka=ducati"><li class="moto"><img src="images/ducati_logo.svg"></li></a>
-					<a href="start.php?marka=ktm"><li class="moto"><img src="images/ktm_logo.svg"></li></a>
-					<a href="start.php?marka=trumph"><li class="moto"><img src="images/triumph_logo.svg"></li></a>
+					<a href="start?marka=honda"><li class="moto"><img src="images/honda_logo.svg"></li></a>
+					<a href="start?marka=yamaha"><li class="moto"><img src="images/yamaha_logo.svg"></li></a>
+					<a href="start?marka=suzuki"><li class="moto"><img src="images/suzuki_logo.svg"></li></a>
+					<a href="start?marka=aprilia"><li class="moto"><img src="images/aprilia_logo.svg"></li></a>
+					<a href="start?marka=kawasaki"><li class="moto"><img src="images/kawasaki_logo.svg"></li></a>
+					<a href="start?marka=bmw"><li class="moto"><img src="images/bmw_logo.svg"></li></a>
+					<a href="start?marka=ducati"><li class="moto"><img src="images/ducati_logo.svg"></li></a>
+					<a href="start?marka=ktm"><li class="moto"><img src="images/ktm_logo.svg"></li></a>
+					<a href="start?marka=trumph"><li class="moto"><img src="images/triumph_logo.svg"></li></a>
   		</ul>
 		</div>

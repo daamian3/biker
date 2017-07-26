@@ -1,15 +1,16 @@
-﻿<?php
+<?php
+
+require "db_functions.php";
 
 function wyswietl_motocykle($marka = null){
 
 	$new = null;
-	global $connect;
+	$connect = db_connect();
 
 	if($marka == null){
 
 		$sql = "SELECT nazwa, image from motocykle ORDER BY ID DESC LIMIT 1";
 		$zapytanie = $connect -> prepare($sql);
-
 		$zapytanie -> execute();
 		$zapytanie = $zapytanie->fetch();
 
@@ -39,7 +40,6 @@ function wyswietl_motocykle($marka = null){
 
 			$sql = "SELECT nazwa, image, data_dodania FROM motocykle WHERE marka = ?";
 			$zapytanie = $connect -> prepare($sql);
-
 			$zapytanie -> bindValue(1, $marka, PDO::PARAM_STR);
 			$zapytanie -> execute();
 
@@ -69,6 +69,7 @@ function wyswietl_motocykle($marka = null){
 			echo "<div>Przepraszamy, wystąpił błąd podczas ładowania motocykli!</div>";
 		}
 	}
+	db_disconnect();
 }
 
 ?>

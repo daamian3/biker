@@ -1,35 +1,32 @@
 ﻿<?php
 	session_start();
 
-	require "config.php";
 	require "db_functions.php";
 
 	$wrong_pass = "Nieprawidłowa nazwa użytkownika lub login!";
 	$acces_denied = "Odmowa dostępu!";
 
+
 	if(!isset($_POST['name']) || !isset($_POST['pass'])){
 
-		zakoncz_polaczenie();
 		$_SESSION['error'] = $acces_denied;
-		header("Location: index.php");
+		header($index);
 		exit();
 
 	}
 
 	if($_GET['name'] != ''){
 
-		zakoncz_polaczenie();
 		$_SESSION['error'] = $acces_denied;
-		header("Location: index.php");
+		header($index);
 		exit();
 
 	}
 
 	if($_GET['pass'] != ''){
 
-		zakoncz_polaczenie();
 		$_SESSION['error'] = $acces_denied;
-		header("Location: index.php");
+		header($index);
 		exit();
 
 	}
@@ -38,9 +35,8 @@
 
 		if ($_POST['display-time'] < 1) {
 
-			zakoncz_polaczenie();
 			$_SESSION['error'] = "Przepraszamy, w twoim działaniu wykryto SPAM!";
-			header("Location: index.php");
+			header($index);
 			exit();
 
 		}
@@ -61,9 +57,8 @@
 
 	if ($komunikaty){
 
-		zakoncz_polaczenie();
 		$_SESSION['error'] = $komunikaty;
-		header("Location: index.php");
+		header($index);
 		exit();
 
 	}
@@ -76,9 +71,8 @@
 
 		if($status[0]==0){
 
-			zakoncz_polaczenie();
 			$_SESSION['error'] = "Konto nie zostało jeszcze aktywowane!";
-			header("Location: index.php");
+			header($index);
 			exit();
 
 		}
@@ -87,11 +81,10 @@
 
 		ustal_wartosc("token", "0", "users", "login = ?", $login);
 
-		zakoncz_polaczenie();
 		$_SESSION['auth'] = true;
 		$_SESSION['login'] = $login;
 		$_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
-		header("Location: start.php");
+		header($start);
 		exit();
 
 	}
@@ -107,9 +100,8 @@
 
 			ustal_wartosc("attempt", "?", "users", "login = ?", $attempt+=1, $login);
 
-			zakoncz_polaczenie();
 			$_SESSION['error'] = "Przekroczono limit 10 prób logowania!<br />Po upływie 10 minut będziesz mógł zalogować się ponownie.";
-			header("Location: index.php");
+			header($index);
 			exit();
 
 		}
@@ -133,20 +125,18 @@
 
 					if($status[0]==0){
 
-						zakoncz_polaczenie();
 						$_SESSION['error'] = "Konto nie zostało jeszcze aktywowane!";
-						header("Location: index.php");
+						header($index);
 						exit();
 
 					}
 
 					ustal_wartosc("attempt", "0", "users", "login = ?", $login);
 
-					zakoncz_polaczenie();
 					$_SESSION['auth'] = true;
 					$_SESSION['login'] = $login;
 					$_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
-					header("Location: index.php");
+					header($index);
 					exit();
 
 				}
@@ -154,18 +144,16 @@
 
 					ustal_wartosc("attempt", "0", "users", "login = ?", $login);
 
-					zakoncz_polaczenie();
 					$_SESSION['error'] = $wrong_pass;
-					header("Location: index.php");
+					header($index);
 					exit();
 
 				}
 			}
 			else{
 
-				zakoncz_polaczenie();
 				$_SESSION['error'] = "Przekroczono limit 10 prób logowania!<br />Po upływie 10 minut będziesz mógł zalogować się ponownie.";
-				header("Location: index.php");
+				header($index);
 				exit();
 
 			}
@@ -175,9 +163,8 @@
 
 			ustal_wartosc("attempt", "?", "users", "login = ?", $attempt+=1, $login);
 
-			zakoncz_polaczenie();
 			$_SESSION['error'] = $wrong_pass;
-			header("Location: index.php");
+			header($index);
 			exit();
 		}
 	}

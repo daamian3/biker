@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-require "config.php";
 require "db_functions.php";
 
 	if(isset($_GET['key'])) $key =  htmlentities(trim($_GET['key']), ENT_QUOTES, "UTF-8");
@@ -13,12 +12,11 @@ require "db_functions.php";
 		if($check==$key) {
 
 			ustal_wartosc("token", "0", "users", "login = ?", $login);
-
 			ustal_wartosc("status", "1", "users", "login = ?", $login);
-			
+
 			zakoncz_polaczenie();
 			$_SESSION['error'] = "Gratulacje, konto zostało aktywowane!\\nTeraz możesz się zalogować.";
-			header("Location: index.php");
+			header();
 			exit();
 
 		}
@@ -26,7 +24,7 @@ require "db_functions.php";
 
 			zakoncz_polaczenie();
 			$_SESSION['error'] = "Nieprawidłowy token!";
-			header("Location: index.php");
+			header($index);
 			exit();
 
 		}
@@ -35,7 +33,7 @@ require "db_functions.php";
 
 		zakoncz_polaczenie();
 		$_SESSION['error'] = "Odmowa dostępu!";
-		header("Location: index.php");
+		header($index);
 		exit();
 
 	}
