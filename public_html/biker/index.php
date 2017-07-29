@@ -56,7 +56,7 @@
 
 			<div id="scroll" class="hamburger"></div>
 
-			<div id="menu" class="buttons">
+			<div id="menu" class="login">
 				<div class="button"><a href="start">Start</a></div>
 				<div id="reg" class="button"><a href="#">Zarejestruj się</a></div>
 				<div id="log" class="button"><a href="#">Zaloguj się</a></div>

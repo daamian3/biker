@@ -70,15 +70,14 @@ moto.mouseleave(function() {
 });
 
 block.mouseenter(function() {
-	block.css("filter","brightness(30%)");
-	block.css("opacity",".7");
-	$(this).css("filter","brightness(100%)");
-	$(this).css("opacity","1");
+	if(mobile == false){
+		block.addClass("darked");
+		$(this).removeClass("darked");
+	}
 });
 
 block.mouseleave(function() {
-	block.css("filter","brightness(100%)");
-	block.css("opacity","1");
+	if(mobile == false) block.removeClass("darked");
 });
 
 scroll.click(function() {

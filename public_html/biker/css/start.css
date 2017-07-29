@@ -45,7 +45,7 @@ input[type=submit]:hover{
 }
 
 #plus img{
-	padding: 50px;
+	padding: 80px;
 	filter: brightness(75%);
 	transition: 1s;
 }
@@ -102,6 +102,10 @@ input[type=submit]:hover{
 }
 
 .buttons{
+	padding: 10px;
+	vertical-align: bottom;
+	display: inline-block;
+	margin-left: 50px;
 	float: right;
 }
 
@@ -256,6 +260,11 @@ ul, li{
 	max-width: 100%;
 	max-height: 320px;
 	padding: 10px;
+}
+
+.darked{
+	filter: brightness(30%);
+	opacity: .7;
 }
 
 .container ul::-webkit-scrollbar-track

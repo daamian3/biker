@@ -190,7 +190,7 @@ h1{
 	margin-right: 10px;
 }
 
-.buttons{
+.login{
 	padding: 10px;
 	vertical-align: bottom;
 	display: inline-block;
@@ -200,13 +200,13 @@ h1{
 .button{
 	float: left;
 	border-bottom: solid 3px #666666;
-	padding: 10px 15px;
+	padding: 6px 15px;
 	padding-top: 0px;
 	transition: padding 0.3s, border 1s;
 }
 
 .button:hover{
-	padding-bottom: 7px;
+	padding-bottom: 2px;
 	border-bottom-color: #ec8c1b;
 }
 
