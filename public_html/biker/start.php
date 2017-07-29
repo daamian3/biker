@@ -7,7 +7,8 @@
 					require "moto_functions.php";
 
 					$marka = $_GET['marka'];
-					wyswietl_motocykle($marka);
+					$szukane = $_GET['szukane'];
+					wyswietl_motocykle($marka, $szukane);
 				?>
 
 			</ul>

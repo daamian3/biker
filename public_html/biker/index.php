@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="jquery/jquery-ui.min.css">
 		<script src="jquery/external/jquery/jquery.js"></script>
 		<script src="jquery/jquery-ui.min.js"></script>
+		<script src="scripts/stellar.js"></script>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="https://fonts.googleapis.com/css?family=Spectral" rel="stylesheet">

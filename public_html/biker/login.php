@@ -33,7 +33,7 @@
 
 	if (isset($_POST['display-time']) ) {
 
-		if ($_POST['display-time'] < 1) {
+		if ($_POST['display-time'] < 2) {
 
 			$_SESSION['error'] = "Przepraszamy, w twoim działaniu wykryto SPAM!";
 			header($index);
@@ -61,6 +61,12 @@
 		header($index);
 		exit();
 
+	}
+
+	if(isset($_SESSION['auth']) && $_SESSION['auth'] == true && $_SESSION['ip'] == $_SERVER['REMOTE_ADDR']){
+		$_SESSION['error'] = "Jesteś już zalogowany, aby zalogowac się na inne konto, wyloguj się.";
+		header($index);
+		exit();
 	}
 
 	$pass = pobierz_wartosc("password", "users", "login = ?", $login);

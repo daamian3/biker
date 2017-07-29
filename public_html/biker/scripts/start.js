@@ -58,6 +58,7 @@ var menu = $("#menu");
 var scroll = $("#scroll");
 var down = false;
 var block = $(".block");
+var sortable = $("#sortable");
 
 moto.mouseenter(function() {
 	moto.css("opacity","0.5");
@@ -82,11 +83,11 @@ block.mouseleave(function() {
 
 scroll.click(function() {
 	if(down==true){
-		menu.slideUp("slow");
+		menu.hide("slide");
 		down = false;
 	}
 	else{
-		menu.slideDown("slow");
+		menu.show("slide");
 		down = true;
 	}
 	return false;
@@ -96,3 +97,8 @@ scroll.click(function() {
 	scroll.toggleClass("exit");
 	return false;
 });
+
+if(sortable.innerHeight()>750 && mobile == false){
+	sortable.css("max-height","750px");
+	sortable.css("overflow-y","scroll");
+}

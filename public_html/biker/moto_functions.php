@@ -2,12 +2,12 @@
 
 require "db_functions.php";
 
-function wyswietl_motocykle($marka = null){
+function wyswietl_motocykle($marka = null, $szukane = null){
 
 	$new = null;
 	$connect = db_connect();
 
-	if($marka == null){
+	if($marka == null && $szukane == null){
 
 		$sql = "SELECT nazwa, image from motocykle ORDER BY ID DESC LIMIT 1";
 		$zapytanie = $connect -> prepare($sql);
@@ -22,7 +22,14 @@ function wyswietl_motocykle($marka = null){
 					<div class="suwak">'.$zapytanie['nazwa'].'</div>
 				</div>
 			</li>
-			<br />
+
+			<li>
+				<div class="block" id="plus">
+					<img src="images/plus.svg">
+					<div class="suwak">Dodaj nowy motocykl</div>
+				</div>
+			</li>
+
 			<li>
 				<div class="block">
 					<img src="images/user.svg">
@@ -34,13 +41,28 @@ function wyswietl_motocykle($marka = null){
 
 	else{
 
-		$ile = pobierz_wartosc("COUNT(*)", "motocykle", "marka = ?", $marka);
-
-		for($i = 1; $i<=$ile; $i++){
-
-			$sql = "SELECT nazwa, image, data_dodania FROM motocykle WHERE marka = ?";
+		if($szukane){
+			$sql = "SELECT COUNT(*) FROM motocykle WHERE nazwa LIKE ?";
 			$zapytanie = $connect -> prepare($sql);
-			$zapytanie -> bindValue(1, $marka, PDO::PARAM_STR);
+			$zapytanie -> bindValue(1, "%".$szukane."%", PDO::PARAM_STR);
+			$zapytanie -> execute();
+			$zapytanie = $zapytanie->fetch();
+			$ile = $zapytanie[0];
+
+			$sql = "SELECT nazwa, image, data_dodania FROM motocykle WHERE nazwa LIKE ? ";
+		}
+
+		else{
+			$ile = pobierz_wartosc("COUNT(*)", "motocykle", "marka = ?", $marka);
+			$sql = "SELECT nazwa, image, data_dodania FROM motocykle WHERE marka = ?";
+		}
+
+		for($i = 0; $i<$ile; $i++){
+
+			$zapytanie = $connect -> prepare($sql);
+			if($szukane) $zapytanie -> bindValue(1, "%".$szukane."%", PDO::PARAM_STR);
+
+			else $zapytanie -> bindValue(1, $marka, PDO::PARAM_STR);
 			$zapytanie -> execute();
 
 			while ($row = $zapytanie->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_NEXT)) {
@@ -65,9 +87,26 @@ function wyswietl_motocykle($marka = null){
 				</li>
 			';
 		}
-		if(!$nazwa[0]){
+		if(!$nazwa[0] && $szukane == null){
 			echo "<div>Przepraszamy, wystąpił błąd podczas ładowania motocykli!</div>";
 		}
+		else if($szukane && !$nazwa[0]){
+			echo "<div>Niestety, ale nie znaleziono żadnego motocykla spełniającego podane kryteria. Spróbuj podać inne słowa kluczowe.</div>";
+		}
+	}
+	db_disconnect();
+}
+
+function tagi(){
+
+	$connect = db_connect();
+
+	$sql = "SELECT nazwa FROM motocykle";
+	$zapytanie = $connect -> prepare($sql);
+	$zapytanie -> execute();
+
+	while ($row = $zapytanie->fetch(PDO::FETCH_NUM, PDO::FETCH_ORI_NEXT)) {
+		echo '"'.$row[0].'"'.", ";
 	}
 	db_disconnect();
 }

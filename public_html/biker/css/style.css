@@ -43,6 +43,11 @@ h1{
 	display: inline-block;
 }
 
+.ui-widget-overlay{
+	background: black;
+	opacity: .6;
+}
+
 .ui-dialog-title{
  text-shadow: 3px 1px black;
 }

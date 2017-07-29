@@ -15,6 +15,15 @@
 		unset($_SESSION['error']);
 	}
 	?>");
+
+
+	  var availableTags = [
+	    <?php tagi(); ?>
+		 ];
+	  $("#szukane").autocomplete({
+	    source: availableTags
+	  });
+
 </script>
 
 <script src="scripts/start.js"></script>

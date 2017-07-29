@@ -87,16 +87,23 @@
 			<div style="clear: both;"></div>
 		</header>
 		<div class="content">
-		<div id="menu">
-  			<ul>
-					<a href="start?marka=honda"><li class="moto"><img src="images/honda_logo.svg"></li></a>
-					<a href="start?marka=yamaha"><li class="moto"><img src="images/yamaha_logo.svg"></li></a>
-					<a href="start?marka=suzuki"><li class="moto"><img src="images/suzuki_logo.svg"></li></a>
-					<a href="start?marka=aprilia"><li class="moto"><img src="images/aprilia_logo.svg"></li></a>
-					<a href="start?marka=kawasaki"><li class="moto"><img src="images/kawasaki_logo.svg"></li></a>
-					<a href="start?marka=bmw"><li class="moto"><img src="images/bmw_logo.svg"></li></a>
-					<a href="start?marka=ducati"><li class="moto"><img src="images/ducati_logo.svg"></li></a>
-					<a href="start?marka=ktm"><li class="moto"><img src="images/ktm_logo.svg"></li></a>
-					<a href="start?marka=trumph"><li class="moto"><img src="images/triumph_logo.svg"></li></a>
-  		</ul>
+			<div class="center">
+			<form class="wyszukiwarka" action="start" method="GET">
+				<input id="szukane" type="text" name="szukane" placeholder="Wpisz szukany motocykl">
+				<input type="submit" value="">
+			</form>
 		</div>
+			<div id="menu">
+
+	  			<ul>
+						<a href="start?marka=honda"><li class="moto"><img src="images/honda_logo.svg"></li></a>
+						<a href="start?marka=yamaha"><li class="moto"><img src="images/yamaha_logo.svg"></li></a>
+						<a href="start?marka=suzuki"><li class="moto"><img src="images/suzuki_logo.svg"></li></a>
+						<a href="start?marka=aprilia"><li class="moto"><img src="images/aprilia_logo.svg"></li></a>
+						<a href="start?marka=kawasaki"><li class="moto"><img src="images/kawasaki_logo.svg"></li></a>
+						<a href="start?marka=bmw"><li class="moto"><img src="images/bmw_logo.svg"></li></a>
+						<a href="start?marka=ducati"><li class="moto"><img src="images/ducati_logo.svg"></li></a>
+						<a href="start?marka=ktm"><li class="moto"><img src="images/ktm_logo.svg"></li></a>
+						<a href="start?marka=trumph"><li class="moto"><img src="images/triumph_logo.svg"></li></a>
+	  		</ul>
+			</div>

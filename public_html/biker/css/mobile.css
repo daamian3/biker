@@ -61,8 +61,97 @@ body{
 	transition: none;
 }
 
+.container{
+	width: 100%;
+}
+
+.container ul{
+	margin:10px;
+}
+
+.container li{
+	margin:10px;
+	display: block;
+	width: 94%;
+	margin-bottom: 50px;
+}
+
+.back{
+	position: fixed;
+}
+
+#menu{
+	background-color: #222222;
+	margin-top: -100px;
+	z-index: 999;
+	padding: 20px;
+}
+
+#menu li{
+	margin-left: 0;
+	width: 105px;
+	height: 105px;
+	padding: 10px;
+	float: left;
+	line-height: 80px;
+}
+
+#menu img{
+	vertical-align: middle;
+}
+
+#menu li:hover{
+	transform: scale(0.8);
+}
+
+.center{
+	width: 100%;
+	text-align: center;
+}
+
+.wyszukiwarka{
+	display: inline-block;
+}
+
+.new{
+	padding: 5px;
+	font-size: 18px;
+}
+
+.suwak{
+	height: auto;
+	opacity: 1;
+	transition: 0.5s ease;
+	padding: 5px;
+	bottom: -30px;
+}
+
+.block:hover .suwak{
+	opacity: .6;
+	padding: 11px;
+	height: 50px;
+}
+
+.block:hover .suwak{
+	opacity: 1;
+	padding: 5px;
+	height: auto;
+}
+
+
 @media screen and (orientation: landscape) {
 	.tor{
 		height: 400px;
 	}
+
+	#menu li{
+		width: 66px;
+		height: 66px;
+		line-height: 45px;
+	}
+
+	#menu{
+		width: 100%;
+	}
+
 }
